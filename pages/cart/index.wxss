@@ -1,0 +1,12 @@
+/* pages/cart/index.wxss */
+.order_list{
+  background-color: green
+}
+.order_sum{
+  background: red;
+  vertical-align:bottom;
+}
+.order_main{
+  background: black;
+  padding: 0% 1% 0% 1%
+}

@@ -1,0 +1,31 @@
+<view class="contain">
+  <view class="store">
+    <view class="store-top">
+      <image class="store-avator" src="{{ loginUserInfo.avatarUrl }}"> </image>
+      <view class="store-name">{{ loginUserInfo.nickName }}</view>
+    </view>
+    <view class="store-phone">{{ storeConfig.storePhone }}</view>
+    <view class="store-address">{{ storeConfig.storeAddress }}</view>
+  </view>
+
+  <view class="search">
+    <button class="search-btn" bindtap="bindGoToSearch">搜索</button>
+  </view>
+
+  <view class="product-list">
+    <view
+      class="product-item"
+      wx:for="{{ goodList }}"
+      wx:key="idx"
+      wx:for-item="item"
+    >
+      <image class="product-item__left" src="{{ item.avator }}"> </image>
+      <view class="product-item__right">
+        <p class="product-item__right-title">{{ item.title }}</p>
+        <p class="product-item__right-price">{{ item.price }}元</p>
+        <p class="product-item__right-buy">{{ item.buyNum }}人买了</p>
+        <button class="product-item__right-btn">去购买</button>
+      </view>
+    </view>
+  </view>
+</view>

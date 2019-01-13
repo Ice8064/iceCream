@@ -1,0 +1,44 @@
+/* pages/mine/index.wxss */
+.wrapper {
+}
+
+/* 用户信息 */
+.user-info {
+  padding-left: 30px;
+  background: #01b085;
+  height: 100px;
+}
+.user-info__avator {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.user-info__name {
+  margin-left: 20px;
+  color: #fff;
+}
+
+/* 订单 */
+.order {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  height: 100px;
+}
+
+/* 店铺二维码 */
+.qrCode {
+  flex-direction: column;
+}
+
+.qrCode-img {
+  margin-top: 10px;
+  width: 150px;
+  height: 150px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

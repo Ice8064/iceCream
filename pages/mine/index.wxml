@@ -1,0 +1,22 @@
+<view class="wrapper">
+  <view class="user-info flex-center">
+    <image class="user-info__avator" src="{{ loginUserInfo.avatarUrl }}">
+    </image>
+    <view class="user-info__name">{{ loginUserInfo.nickName }}</view>
+  </view>
+
+  <view class="order">
+    <p>我的订单</p>
+    <p bindtap="openOrder">全部订单></p>
+  </view>
+
+  <view class="qrCode flex-center">
+    <p class="qrCode-title">店铺二维码</p>
+    <image
+      class="qrCode-img"
+      mode="widthFix"
+      src="https://user-images.githubusercontent.com/1715463/42300198-c79e41ac-8041-11e8-9bf4-569901bc8c5d.jpeg"
+    >
+    </image>
+  </view>
+</view>

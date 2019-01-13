@@ -1,0 +1,7 @@
+<view class="order_main">
+  <view wx:for="{{ order_list }}" wx:key="idx" class="order_list">
+    order_template
+  </view>
+
+  <view class="order_sum"> 订单合计 </view>
+</view>

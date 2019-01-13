@@ -1,0 +1,75 @@
+/* pages/main/index.wxss */
+/*  #01b085 #c7faed */
+
+/* 商店信息  */
+.store {
+  margin: 10px;
+  padding: 10px;
+  background: #01b085;
+  border-radius: 20px;
+  color: white;
+}
+.store-top {
+  display: flex;
+  flex-direction: row;
+}
+.store-avator {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border-radius: 100%;
+}
+
+/* 搜索框  */
+.search {
+  height: 30px;
+  margin: 10px;
+}
+.search-btn {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  border-radius: 0px;
+  height: 100%;
+  color: #01b085;
+  background-color: #fff;
+  font-size: 12px;
+}
+
+/* 商品list */
+.product-list {
+  margin-top: 20px;
+}
+
+.product-item {
+  display: flex;
+  margin: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+.product-item__left {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+.product-item__right {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 260px;
+  margin-left: 10px;
+}
+.product-item__right-title {
+}
+.product-item__right-price {
+  color: red;
+}
+.product-item__right-buy {
+}
+.product-item__right-btn {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  color: #fff;
+  background: red;
+}

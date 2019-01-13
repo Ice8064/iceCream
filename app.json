@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/main/index",
+    "pages/cart/index",
+    "pages/mine/index",
+    "pages/manage/index",
+    "pages/order/index",
+    "pages/store/index",
+    "pages/search/index",
+    "pages/goods/index",
+    "pages/register/index"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "雪糕团",
+    "navigationBarColor": "#01b085",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#01b085",
+    "color": "#333",
+    "backgroudColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/main/index",
+        "text": "首页",
+        "iconPath": "images/icon/main.png",
+        "selectedIconPath": "images/icon/main_selected.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "images/icon/cart.png",
+        "selectedIconPath": "images/icon/cart_selected.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "images/icon/mine.png",
+        "selectedIconPath": "images/icon/mine_selected.png"
+      }
+    ]
+  }
+}

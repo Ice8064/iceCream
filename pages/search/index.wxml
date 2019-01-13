@@ -1,0 +1,14 @@
+<view class='sMain'>
+  <view class='sBox'>
+    <input class='sIpt'></input>
+    <button class='sBtn'>搜索</button>
+  </view>
+
+  <!-- <view class='sBox'> -->
+    <scroll-view scroll-y="true" class='sScroll'>
+      <view wx:for='{{slist}}' class='iScroll' wx:key="id">
+        {{item.id}}
+      </view>
+    </scroll-view>
+  <!-- </view> -->
+</view>
