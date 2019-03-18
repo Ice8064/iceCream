@@ -1,0 +1,52 @@
+<form report-submit bindsubmit="getSubmit" wx:if="{{ isLoaded }}">
+<view class="page">
+  <view class="cash {{ !countDownTime || detail.isFinish ? 'expire' : '' }}">
+    <image src="{{ detail.headUrl }}" alt="头像" class="userAvatar" />
+    <view class="count-down flex-center" wx:if="{{ !detail.isFinish && countDownTime.hour }}">
+      <text>{{ countDownTime.hour }}</text><label>:</label><text>{{ countDownTime.minute }}</text><label>:</label><text>{{ countDownTime.second }}</text><label>:</label><text>{{ countDownTime.ms }}</text>
+    </view>
+    <view class="flex-center expire-text" wx:if="{{ !countDownTime || detail.isFinish }}">
+      提现已过期
+    </view>
+    <view class="cashing font-16">
+      {{ !countDownTime || detail.isFinish ? "已提现" : "正在提现" }}<text class="dollar font-18">￥</text><text class="amount">{{ !countDownTime || detail.isFinish ? detail.reduceAmount : detail.amount }}</text>
+    </view>
+    <view class="assistance-speed" wx:if="{{ type != 3 }}">
+      <view class="bg" style="width: {{ percent }}"></view>
+      <view class="position" style="left: {{ percent }};margin-left: {{ marginLeft }}">
+        <text class="font-10">￥</text><text class="font-16">{{ detail.reduceAmount }}</text>
+      </view>
+    </view>
+    <button class="large-btn" form-type="submit" hover-class="none" open-type="share" wx:if="{{ countDownTime }}">
+      分享新用户 加速提现
+    </button>
+    <button class="large-btn" form-type="submit" hover-class="none" wx:else bindtap="handleToHome">
+      使用提现金额消费
+    </button>
+    <view class="tip">提现金额可在下次购物时直接使用</view>
+    <view class="share-tip">邀请{{ detail.minEstimatePersons }}～{{ detail.maxEstimatePersons }}名新用户下单即可完成提现<text class="red" bindtap="handleToRule">了解更多</text><image src="https://imgs-1253854453.image.myqcloud.com/892e78b1239374866e075f7a51f03239.png" class="img-top" alt="右箭头"/></view>
+  </view>
+
+  <!--好友助力-->
+  <view class="friend-list" wx:if="{{ detail.withdrawFlowsResponseVos.length }}">
+    <view class="title font-16">
+      好友助力团
+    </view>
+    <view class="flex-between friend-item" wx:for="{{ detail.withdrawFlowsResponseVos }}" wx:key="{{ index }}">
+      <view class="friend-info">
+        <image src="{{ item.headUrl }}" alt="助力好友头像" />
+        <view class="font-14 ellipsis">{{ item.nickName }}</view>
+        <view class="gray">来自用户助力</view>
+      </view>
+      <view class="font-14 red">
+        <text class="{{ item.topBoostAmount ? '' : 'default-color' }}">{{ item.topBoostAmount ? "最高助力" : "助力" }}</text>￥{{ item.amount }}
+      </view>
+    </view>
+  </view>
+
+  <!--提现列表 假数据-->
+  <view wx:if="{{ detail.withdrawFlowsResponseVos.length < 4 && isLoaded }}">
+    <cash-list-component></cash-list-component>
+  </view>
+</view>
+</form>

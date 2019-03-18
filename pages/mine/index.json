@@ -1,3 +1,10 @@
 {
-  "navigationBarTitleText": "我的"
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "冰淇淋",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#ff3131",
+  "backgroundColorTop": "#ff3131",
+  "usingComponents": {
+    "auth-component": "../../components/auth/index"
+  }
 }

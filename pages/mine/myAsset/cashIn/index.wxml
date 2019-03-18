@@ -1,0 +1,33 @@
+<form report-submit bindsubmit="getReportSubmit">
+  <!--tab-->
+  <view class="tab flex-around">
+    <view class="tab-item {{ tabIndex == index ? 'active' : '' }}" wx:for="{{ tabs }}" wx:key="{{ index }}" bindtap="handleChangeTab" data-index="{{ index }}">
+      {{ item.name }}
+    </view>
+  </view>
+  <!--list-->
+  <view class="cash-list">
+    <view class="cash-item flex-between line-bottom" wx:for="{{ list }}" wx:key="{{ index }}">
+      <view class="left" bindtap="handleToDetail" data-item="{{ item }}">
+        <view class="font-16 font-bold ellipsis">{{ item.boostTypeName }}<text wx:if="{{ item.fromUserName }}">-{{ item.fromUserName }}</text></view>
+        <view class="gray">{{ item.createdAt }}</view>
+        <view class="small-btn small-btn-yellow" wx:if="{{ item.status == 2 && item.restBoostTime }}">{{ item.restBoostTime }}</view>
+        <view class="small-btn small-btn-gray" wx:if="{{ item.status == 3 }}">已过期</view>
+      </view>
+      <view class="right">
+        <view class="font-14 font-bold">{{ item.amount }} (已提现<text class="red">{{ item.reduceAmount }}</text>)</view>
+        <button form-type="submit" class="share-btn font-16" hover-class="none" wx:if="{{ item.status == 2 && !isAdmin }}"  bindtouchstart="handleGetItemData" data-item="{{ item }}" open-type="share">分享助力</button>
+        <button form-type="submit" class="share-btn font-16" hover-class="none" wx:if="{{ item.status == 2 && isAdmin }}"  bindtouchstart="handleTouchStart" data-item="{{ item }}">分享助力</button>
+      </view>
+    </view>
+  </view>
+  <!--数据加载提示-->
+  <view class="hermes-data-tip" wx:if="{{ isLoaded && list.length }}">
+    没有更多数据啦！
+  </view>
+   <!--没有数据的状态-->
+ <empty-list-component show="{{ isLoaded && !list.length }}" imgUrl="https://imgs-1253854453.image.myqcloud.com/123615b0a09f734ee2bcecb948772ba1.png" title="还没有红包~" button="逛一逛" bind:callback="handleToHome"></empty-list-component>
+
+ <!--share-component-->
+  <share-component show="{{ showShare }}" bind:shareHide="handleShareHide" bind:sharePoster="handleSharePoster"></share-component>
+</form>

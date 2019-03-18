@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "auth-wrap-component": "../../../../../components/auth/wrap/index",
+    "share-component": "../../../../../components/dialog/share/index"
+  }
+}

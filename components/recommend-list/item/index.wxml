@@ -1,0 +1,12 @@
+<view class="recommend-item" bindtap="handleToDetail">
+  <image src="{{ data.mainPicUrl }}" class="product-img"></image>
+  <view class="product-name"> {{ data.title }} </view>
+  <view class="product-info">
+    <view class="product-price"> 
+      <text class="dollar">¥</text>
+      <text class="price">{{ data.minSalePrice }}</text>
+      <text class="gain">赚{{ data.maxEarnAmount }}</text>
+    </view>
+    <view class="product-user-amount" wx:if="{{ data.buyerCount > 0 }}"> {{ data.buyerCount }}人买了 </view>
+  </view>
+</view>

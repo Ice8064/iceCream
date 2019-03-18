@@ -1,0 +1,9 @@
+<form report-submit bindsubmit="getSubmit">
+  <view class="remark">
+    <textarea placeholder="请填写备注" maxlength="200" bindinput="handleInput" value="{{ remark }}" />
+    <view class="num">{{ remark.length }}/200</view>
+  </view>
+  <view class="buttons">
+    <button form-type="submit" class="large-btn" hover-class="none">确定</button>
+  </view>
+</form>

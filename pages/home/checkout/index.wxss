@@ -1,0 +1,164 @@
+/*banner*/
+page {
+  background: #f0f0f0;
+  padding-bottom: 100rpx;
+}
+.address {
+  padding: 30rpx 0 38rpx 30rpx;
+  background: #fff;
+  border-top: 1rpx solid #ececec;
+  margin-bottom: 16rpx;
+  position: relative;
+}
+.address .bg {
+  width: 100%;
+  height: 8rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.address-info {
+  width: 100%;
+}
+.address-info .position-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 8rpx;
+}
+.address-desc {
+  margin-top: 14rpx;
+}
+/*商品list*/
+.buy-product-list {
+  padding: 30rpx 40rpx 30rpx 30rpx;
+  display: flex;
+  position: relative;
+  background: #fff;
+}
+.buy-product-img {
+  width: 176rpx;
+  height: 176rpx;
+  border-radius: 8rpx;
+}
+.buy-product-list .info {
+  margin-left: 16rpx;
+}
+.buy-product-list .name {
+  font-size: 28rpx;
+  line-height: 1.4;
+  width: 500rpx;
+}
+.buy-product-list .price {
+  margin: 4rpx 0;
+}
+.buy-product-list .bottom {
+  width: 500rpx;
+  margin-top: 20rpx;
+  position: absolute;
+  bottom: 30rpx;
+}
+.hermes-minus-add {
+  height: 52rpx;
+  line-height: 48rpx;
+  width: 182rpx;
+}
+.hermes-minus-add .minus,
+.hermes-minus-add .add {
+  width: 52rpx;
+}
+.hermes-minus-add .number {
+  font-size: 28rpx;
+  width: 70rpx;
+}
+.freight,
+.favourable,
+.remarks {
+  background: #fff;
+  margin-top: 16rpx;
+}
+/*运费*/
+.freight {
+  padding: 0 30rpx;
+  font-size: 28rpx;
+}
+.freight .flex-between {
+  height: 100rpx;
+}
+.freight .font-normal {
+  color: #6b6d6b;
+}
+.freight image {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 16rpx;
+}
+/*优惠*/
+.favourable {
+  height: 156rpx;
+  padding-right: 20rpx;
+  text-align: center;
+  position: relative;
+}
+.favourable .switch {
+  position: absolute;
+  right: 20rpx;
+}
+.favourable-amount {
+  font-size: 36rpx;
+  margin-bottom: 16rpx;
+}
+.amount-other {
+  font-size: 28rpx;
+}
+.amount-other image {
+  width: 14rpx;
+  height: 22rpx;
+  margin-left: 6rpx;
+}
+.amount-other .rule {
+  height: 32rpx;
+  line-height: 32rpx;
+  padding-left: 14rpx;
+  margin-left: 14rpx;
+  border-left: 2rpx solid #ececec;
+}
+/*remarks*/
+.remarks {
+  height: 100rpx;
+}
+.remarks text {
+  display: inline-block;
+  width: 520rpx;
+  margin-left: 30rpx;
+  position: relative;
+  top: 4rpx;
+}
+/*提交*/
+.checkout-action {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  bottom: 0;
+  z-index: 2;
+  background: #fff;
+}
+.checkout-action .info {
+  width: 50%;
+  color: #2c2c2c;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.checkout-action .info-price {
+  padding: 12rpx 0 6rpx;
+}
+.checkout-action .buy-button-wrap {
+  width: 50%;
+  background: #f44135;
+  text-align: center;
+  color: #fff;
+}
+.buy-button-wrap button {
+  line-height: 1.4;
+  font-size: 24rpx;
+}

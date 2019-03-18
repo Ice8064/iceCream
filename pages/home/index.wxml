@@ -1,0 +1,59 @@
+<view class="page">
+  <form report-submit bindsubmit="getSubmit">
+    <!-- 红色渐变背景 -->
+    <view class="page-bg" wx:if="{{ banners.length > 0 }}"></view>
+
+    <!-- banner -->
+    <view class="banner">
+      <swiper
+        class="swiper"
+        indicator-dots="{{ bannersOption.showDot }}"
+        autoplay="{{ bannersOption.autoplay }}"
+        bindchange="swiperChange"
+        interval="{{ bannersOption.interval }}"
+        circular="{{ bannersOption.circular }}"
+      >
+        <block wx:for="{{ banners }}" wx:key="index">
+          <swiper-item class="swiper-item">
+            <image src="{{ item.img }}" class="slide-image" bindtap="handleClickBanner" data-index="{{ index }}"></image> 
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="banner-dots" wx:if="{{ banners.length > 1 }}">
+        <block wx:for="{{ banners }}" wx:key="index">
+          <view class="dot {{index == bannersOption.swiperCurrent ? ' active' : ''}}"></view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 活动商品 -->
+    <feed-list-component 
+      pagedata="{{ feedList }}"></feed-list-component>
+
+    <!--推荐商品-->
+    <view class="recommend-list">
+    <recommend-list-component pageData="{{ recommendList }}" title="推荐商品" isLoading="{{ isLoading }}"></recommend-list-component>
+    </view>
+    <!--悬浮-->
+    <!-- <view class="suspend" bindtap="handleToCashIn" wx:if="{{ withdrawTotalAmount != '0.00' }}">
+      <view class="suspend-content">
+        <view class="suspend-amount">￥<text class="font-16 font-weight">{{ withdrawTotalAmount }}</text></view>
+        <view class="font-11">提现中</view>
+      </view>
+    </view> -->
+
+    <!--返回顶部-->
+    <view class="return-to-top" hidden="{{ notShowTopIcon }}" bindtap="handleReturnTop">
+      <image src="https://imgs-1253854453.image.myqcloud.com/2ec95bd38f006cdc5b60c7bbcdb0276d.png" />
+    </view>
+
+    <!--助力弹窗-->
+    <assistance-component show="{{ showAssistanceDialog }}" type="{{ assistanceType }}" bind:close="handleCloseAssisDialog" bind:ok="handleAssistanceOk" pageData="{{ bootsDetail }}"></assistance-component>
+
+    <!--新用户红包和助力产生的红包-->
+    <!-- <redpack-component show="{{ showPacketDialog }}" type="{{ packetType }}" bind:close="handleCloseRedpacketDialog" pageData="{{ redpacketDetail }}"></redpack-component> -->
+
+    <!--弹幕-->
+    <danmuku-component show="{{ showDanmuku }}"></danmuku-component>
+  </form>
+</view>

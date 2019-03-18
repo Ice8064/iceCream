@@ -1,0 +1,99 @@
+<view class="page">
+  <!-- banner -->
+  <view class="banner">
+    <swiper
+      class="swiper"
+      indicator-dots="{{ bannersOption.showDot }}"
+      autoplay="{{ bannersOption.autoplay }}"
+      bindchange="swiperChange"
+      interval="{{ bannersOption.interval }}"
+      circular="{{ bannersOption.circular }}"
+    >
+      <block wx:for="{{ productData.carouselImgList }}" wx:key="index">
+        <swiper-item>
+          <image src="{{ item.url }}" class="slide-image"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view
+      class="banner-dots"
+      wx:if="{{ productData.carouselImgList.length > 1 }}"
+    >
+      {{ bannersOption.swiperCurrent + 1 }}/{{
+        productData.carouselImgList.length
+      }}
+    </view>
+  </view>
+
+  <!-- 商品信息 -->
+  <view class="product">
+    <view class="product-info">
+      <view class="price-info">
+        <text class="red font-16">￥</text>
+        <text class="red font-26">{{
+          productData.itemSkuList[0].salePrice
+        }}</text
+        ><text class="gray"
+          >￥{{ productData.itemSkuList[0].marketPrice }}</text
+        ></view
+      >
+      <view class="buy-info">
+        <text
+          class="zhuan red"
+          wx:if="{{ productData.itemSkuList[0].earnAmount }}"
+          >赚￥{{ productData.itemSkuList[0].earnAmount }}</text
+        >
+        <text class="gray" wx:if="{{ productData.saleCount }}"
+          >{{ productData.saleCount }}人买了</text
+        ></view
+      >
+    </view>
+    <view class="name">
+      {{ productData.title }}
+    </view>
+    <view class="desc" bindtap="handleShowServiceDialog">
+      <image
+        src="https://imgs-1253854453.image.myqcloud.com/c2f3272986b1b7e0cc3ae1e794fae090.png"
+        mode="widthFix"
+        alt="全部包邮"
+      ></image>
+    </view>
+  </view>
+
+  <!--商品详情-->
+  <view
+    class="detail-introduce"
+    wx:if="{{ productData.itemDetailImgList.length }}"
+  >
+    <view class="hd font-16">商品详情</view>
+    <image
+      src="{{ item.url }}"
+      alt="商品介绍图片"
+      mode="widthFix"
+      wx:for="{{ productData.itemDetailImgList }}"
+      wx:key="{{ index }}"
+    ></image>
+  </view>
+
+  <!-- 相似商品 -->
+  <recommend-list-component
+    pageData="{{ recommendList }}"
+    title="相似商品"
+    isLoading="{{ isLoading }}"
+  ></recommend-list-component>
+
+  <!-- 购买弹窗 -->
+  <buy-dialog-component pageData="{{ productData }}"></buy-dialog-component>
+
+  <!--服务说明-->
+  <service-desc-component
+    show="{{ showServiceDialog }}"
+    bind:close="handleHideServiceDialog"
+  ></service-desc-component>
+
+  <!--danmuku-->
+  <danmuku-component show="showDanmuku"></danmuku-component>
+
+  <!--新用户红包和助力产生的红包-->
+  <!-- <redpack-component show="{{ showPacketDialog }}" type="{{ packetType }}" bind:close="handleCloseRedpacketDialog" pageData="{{ redpacketDetail }}"></redpack-component> -->
+</view>

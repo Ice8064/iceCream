@@ -1,0 +1,76 @@
+page {
+  background: #f0f0f0;
+  padding-top: 84rpx;
+}
+.tab {
+  width: 100%;
+  height: 84rpx;
+  border-top: 1rpx solid #ececec;
+  border-bottom: 1rpx solid #ececec;
+  background: #fff;
+  font-size: 28rpx;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+.tab-item {
+  height: 84rpx;
+  line-height: 84rpx;
+  color: #8e8b8b;
+  position: relative;
+}
+.tab-item.active {
+  font-weight: bold;
+  font-size: 16px;
+  color: #f44135;
+}
+.tab-item.active::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 3px;
+  overflow: hidden;
+  background: #f44135;
+  bottom: -2rpx;
+  left: 0;
+}
+.cash-list {
+  padding: 0 30rpx;
+  background: #fff;
+}
+.cash-item {
+  padding: 30rpx 0;
+}
+.cash-item:last-child {
+  border-bottom: 0;
+}
+.cash-item .left {
+  width: 360rpx;
+}
+.cash-item .small-btn {
+  float: left;
+}
+.cash-item .left .gray {
+  padding: 8rpx 0 0rpx;
+}
+.cash-item .small-btn {
+  margin-top: 12rpx;
+}
+.cash-item .right {
+  text-align: right;
+}
+.small-btn-gray {
+  border-color: #bdbdbd;
+  background-color: #f9f9f9;
+  color: #8e8b8b;
+}
+.share-btn {
+  width: 180rpx;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #f44135;
+  border-radius: 12rpx;
+  display: inline-block;
+  margin-top: 14rpx;
+}

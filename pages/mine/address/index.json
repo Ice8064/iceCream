@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "收货信息",
+  "usingComponents": {
+    "empty-list-component": "../../../components/empty/index"
+  }
+}

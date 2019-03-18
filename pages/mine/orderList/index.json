@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "订单列表",
+  "usingComponents": {
+    "order-item-component": "./modules/orderItem/index",
+    "empty-list-component": "../../../components/empty/index"
+  }
+}

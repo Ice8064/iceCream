@@ -1,0 +1,28 @@
+<view class="component-wrapper">
+  <view class="marquee-wrapper">
+    <view class="marquee-item {{ isAnimation ? 'animation' : '' }}">
+      <view class="marquee-inner">
+        <view class="info-list-wrapper">
+          <view class="info-item top-list">
+            <view class="text-center info-item__inner">
+              <image class="info-item__inner__img"
+                    src="{{ quee.icon }}"
+                    wx:if="{{ quee.icon }}" alt="头像" />
+              <view class="info-item__inner__content">
+                <view class="user-action">
+                  {{ quee.messageInfo.time }}前，
+                </view>
+                <view class="user-name ellipsis">
+                  {{ quee.messageInfo.nickname }}
+                </view>
+                <view class="user-action">
+                  {{ quee.messageInfo.action }}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

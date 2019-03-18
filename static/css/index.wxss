@@ -1,0 +1,55 @@
+@import "./base.wxss";
+@import "./font.wxss";
+@import "./common.wxss";
+
+/*显示是否还有数据或者加载中*/
+.hermes-data-tip {
+  padding: 24rpx 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8e8b8b;
+  background: #f0f0f0;
+}
+/*list*/
+.hermes-list-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #323030;
+  font-size: 28rpx;
+  padding: 0 30rpx 0 30rpx;
+}
+.hermes-list-cell.access {
+  position: relative;
+  padding-right: 80rpx;
+}
+.right-icon {
+  position: relative;
+  height: 12px;
+  width: 12px;
+}
+.hermes-list-cell.access::after,
+.right-icon::after {
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 1.5px 1.5px 0 0;
+  border-color: #5e5959;
+  border-style: solid;
+  font-weight: normal;
+  transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+.right-icon::after {
+  top: 6px;
+  right: 3px;
+}
+.right-icon.white::after {
+  border-color: #fff;
+}
+.right-icon.yellow::after {
+  border-color: #ffc468;
+}

@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="hermes-list-cell access" bindtap="handleToServer">
+    <view class="font-16">
+      用户注册及服务协议
+    </view>
+  </view>
+  <view class="hermes-list-cell access" bindtap="handleToPrivacy">
+    <view class="font-16">
+      隐私政策
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<form report-submit bindsubmit="getSubmit">
+  <view class="hermes_common-dialog bottom" wx:if="{{ show }}" bindtap="handleCloseDialog">
+    <view class="share-content" catchtap="handleContent">
+      <view class="title"><text class="left"></text>分享到<text class="right"></text></view>
+      <view class="share-buttons">
+        <button open-type="share" form-type="submit" class="btn" bindtouchstart="bindtouchstart">
+          <image src="https://imgs-1253854453.image.myqcloud.com/f7683ac21228a1c6de59e75808d0e7c0.png" alt="微信好友" />
+          <view>微信好友</view>
+        </button>
+        <view class="btn" bindtap="handleSharePoster">
+          <image src="https://imgs-1253854453.image.myqcloud.com/0848bcb2384b91539179511bc43dcfd6.png" alt="生成海报" />
+          <view>生成海报</view>
+        </view>
+      </view>
+      <view class="cancel-btn" bindtap="handleCloseDialog">
+        取消
+      </view>
+    </view>
+  </view>
+</form>

@@ -1,5 +1,0 @@
-<view>
-  <scroll-view> 
-    <view wx:for="{{order_list}}" bindtap='jumpGoods'> template </view>
-  </scroll-view>
-</view>

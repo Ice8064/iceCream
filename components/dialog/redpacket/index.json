@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "auth-wrap-component": "../../auth/wrap/index"
+  }
+}

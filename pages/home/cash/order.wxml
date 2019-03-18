@@ -1,0 +1,42 @@
+<form report-submit bindsubmit="getSubmit">
+<view class="page">
+  <view class="cash">
+    <view class="cash-tip">
+      已存入账户，请尽快提现
+    </view>
+    <view class="count-down flex-center">
+      <text>{{ countDownTime.hour }}</text><label>:</label><text>{{ countDownTime.minute }}</text><label>:</label><text>{{ countDownTime.second }}</text><label>:</label><text>{{ countDownTime.ms }}</text>
+    </view>
+    <view class="cashing font-16">
+      正在提现<text class="dollar font-18">￥</text><text class="amount">{{ detail.restAmount }}</text><text class="amount" wx:if="{{ detail.newOrder }}">+{{ detail.newOrderAmount }}</text>
+      <image src="https://imgs-1253854453.image.myqcloud.com/620c76f3aa173776dcd2f641f4ba0be7.png" alt="新用户标志" wx:if="{{ detail.newOrder }}"/>
+    </view>
+    <button class="large-btn" form-type="submit" hover-class="none" open-type="share">
+      分享新用户 加速提现
+    </button>
+    <view class="tip">提现金额可在下次购物时直接使用</view>
+    <view class="share-tip">邀请{{ detail.minEstimatePersons }}～{{ detail.maxEstimatePersons }}名新用户下单即可完成提现<text class="red" bindtap="handleToRule">了解更多</text><image src="https://imgs-1253854453.image.myqcloud.com/892e78b1239374866e075f7a51f03239.png" class="img-top" alt="右箭头"/></view>
+  </view>
+  
+  <!--提现列表 假数据-->
+  <cash-list-component></cash-list-component>
+  <!--支付弹窗-->
+  <view class="hermes_common-dialog" wx:if="{{ show }}">
+    <!--待领取状态-->
+    <view class="order-redpacket-dialog">
+      <image src="{{ headUrl }}" alt="用户头像" class="userAvter" />
+      <view class="font-14 title">恭喜获得</view>
+      <view class="order-redpacket-info font-16">
+        <view class="amount">¥<text>{{ detail.reduceAmount }}</text></view>
+        <view class="font-13">已提现，消费时抵用</view>
+      </view>
+      <view class="order-redpacket-info font-16">
+        <view class="amount">¥<text>{{ detail.restAmount }}</text></view>
+        <view class="font-13">再邀请好友助力可提现</view>
+      </view>
+      <view class="font-14 user-acount"></view>
+      <button alt="提现红包" class="cash-button" form-type="submit" bindtap="handleCloseDialog"></button>
+    </view>
+  </view>
+</view>
+</form>

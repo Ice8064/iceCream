@@ -1,0 +1,50 @@
+@import "../../../static/css/common.wxss";
+@import "../../../static/css/font.wxss";
+.share-content {
+  width: 100%;
+  background: #fff;
+}
+.title {
+  padding: 36rpx 0;
+  text-align: center;
+}
+.title text {
+  height: 1rpx;
+  overflow: hidden;
+  background: #d8d8d8;
+  width: 174rpx;
+  display: inline-block;
+  position: relative;
+  top: -10rpx;
+}
+.title .left {
+  margin-right: 60rpx;
+}
+.title .right {
+  margin-left: 60rpx;
+}
+.share-buttons {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.share-buttons .btn {
+  color: #6b6d6b;
+  font-size: 24rpx;
+  line-height: 1;
+}
+.share-buttons .btn:first-child {
+  margin-right: 160rpx;
+}
+.share-buttons image {
+  margin-bottom: 14rpx;
+  width: 88rpx;
+  height: 88rpx;
+}
+.cancel-btn {
+  border-top: 1rpx solid #d8d8d8;
+  margin: 50rpx 28rpx 0;
+  height: 92rpx;
+  line-height: 92rpx;
+  text-align: center;
+}

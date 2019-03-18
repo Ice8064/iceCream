@@ -1,0 +1,41 @@
+<view class="hermes_common-dialog bottom" bindtap="handleClose" wx:if="{{ show }}">
+  <view class="hermes_common-dialog-content">
+    <view class="service-content" catchtap="handleContainer">
+      <view class="hd">服务说明</view>
+      <view class="service-list">
+        <view class="service-item">
+          <view class="title">
+            <image src="https://imgs-1253854453.image.myqcloud.com/157f7b1ceb70d989c9082e7aa13cc31a.png" alt="icon"/>全场包邮
+          </view>
+          <view class="service-text">
+            全场商品，包邮直送（部分偏远地区除外，具体请见支付页面说明）
+          </view>
+        </view>
+        <view class="service-item">
+          <view class="title">
+            <image src="https://imgs-1253854453.image.myqcloud.com/157f7b1ceb70d989c9082e7aa13cc31a.png" alt="icon"/>7天退换
+          </view>
+          <view class="service-text">
+            7天退换 商家承诺7天无理由退换货（生鲜食品及部分定制化商品不支持此服务）
+          </view>
+        </view>
+        <view class="service-item">
+          <view class="title">
+            <image src="https://imgs-1253854453.image.myqcloud.com/157f7b1ceb70d989c9082e7aa13cc31a.png" alt="icon"/>48小时发货
+          </view>
+          <view class="service-text">
+            商家承诺48小时内发货
+          </view>
+        </view>
+        <view class="service-item">
+          <view class="title">
+            <image src="https://imgs-1253854453.image.myqcloud.com/157f7b1ceb70d989c9082e7aa13cc31a.png" alt="icon"/>假一赔十
+          </view>
+          <view class="service-text">
+            若收到的商品是假冒品牌，可获得十倍赔偿
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

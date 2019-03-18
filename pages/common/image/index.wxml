@@ -1,0 +1,5 @@
+<view>
+  <image src="{{ imgUrl }}" alt="" mode="widthFix" bindtap="previewImages"/>
+  <button class="home-buy" bindtap="handleToHome" wx:if="{{ showButton }}" hover-class="none">去首页购物</button>
+  <button class="share-btn" bindtap="handleToSavePoster" wx:if="{{ showShareButton }}" hover-class="none">保存图片</button>
+</view>

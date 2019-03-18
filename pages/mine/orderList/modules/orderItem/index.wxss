@@ -1,0 +1,62 @@
+@import "../../../../../static/css/common.wxss";
+@import "../../../../../static/css/font.wxss";
+.order-item {
+  background: #fff;
+  margin-bottom: 16rpx;
+}
+.padding-15 {
+  padding: 0 30rpx;
+}
+/*订单状态和编号*/
+.order-hd {
+  padding: 0 30rpx;
+  height: 100rpx;
+}
+.order-num image {
+  width: 28rpx;
+  height: 30rpx;
+  margin-right: 8rpx;
+  border-radius: 8rpx;
+}
+/*订单商品*/
+.order-product {
+  background: #fafafa;
+  padding: 30rpx;
+}
+.product-img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 8rpx;
+}
+.info {
+  height: 140rpx;
+  width: 528rpx;
+  position: relative;
+  margin-left: 20rpx;
+}
+.info .name {
+  line-height: 1.4;
+}
+.info .num {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #8e8b8b;
+}
+.product-price {
+  margin: 20rpx 0;
+}
+.order-botton {
+  padding-bottom: 20rpx;
+}
+.order-botton button {
+  margin-right: 30rpx;
+}
+.order-botton button:last-child {
+  margin-right: 0;
+}
+/*助力*/
+.assistance {
+  height: 96rpx;
+  border-top: 1rpx solid #ececec;
+}

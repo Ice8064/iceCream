@@ -1,0 +1,14 @@
+<view class="cash-list" wx:if="{{ list.length }}">
+  <view class="title">
+    TA们刚刚提现了
+  </view>
+  <view class="cash-item" wx:for="{{ list }}" wx:key="{{ index }}">
+    <view class="user-info">
+      <image src="{{ item.headUrl }}" alt="用户头像" />
+      {{ item.nickName }}
+    </view>
+    <view class="cash-info">
+      {{ item.secondTime }}秒前，提现了<text>¥{{ item.amount }}</text>
+    </view>
+  </view>
+</view>

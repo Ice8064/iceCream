@@ -1,0 +1,4 @@
+.hermes-list-cell {
+  height: 48px;
+  border-bottom: 1rpx solid #ececec;
+}

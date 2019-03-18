@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "DIN Alternate";
+  src: url(https://imgs-1253854453.image.myqcloud.com/d1e774df9ca3e48e729de2eeae6b9233.ttf) format("woff");
+  font-weight: bold;
+}
+.font-11 {
+  font-size: 22rpx;
+}
+
+.font-12 {
+  font-size: 24rpx;
+}
+
+.font-13 {
+  font-size: 26rpx;
+}
+
+.font-14 {
+  font-size: 28rpx;
+}
+
+.font-16 {
+  font-size: 32rpx;
+}
+
+.font-18 {
+  font-size: 36rpx;
+}
+
+.font-22 {
+  font-size: 44rpx;
+}
+
+.font-26 {
+  font-size: 52rpx;
+}
+
+.font-20 {
+  font-size: 40rpx;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-family {
+  font-family: "DIN Alternate";
+}

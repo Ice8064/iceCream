@@ -1,0 +1,19 @@
+<view class="page">
+  <!--tab-->
+  <view class="order-tab">
+    <scroll-view scroll-x="true" class="scroll-tab" scroll-left="{{ tabScrollLeft }}" scroll-with-animation="true">
+      <view class="tab">
+        <view class="tab-item {{ tabIndex == index ? 'active' : '' }}" wx:for="{{ tabs }}" wx:key="{{ index }}" bindtap="handleChangeTab"  data-index="{{ index }}">
+          {{ item.name }}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view wx:if="{{ orders.length }}">
+    <order-item-component wx:for="{{ orders }}" wx:key="{{ index }}" pageData="{{ item }}" index="{{ index }}"></order-item-component>
+  </view>
+  <view class="hermes-data-tip"  wx:if="{{ isLoading }}">
+    正在加载中...
+  </view>
+  <empty-list-component show="{{ isLoaded && !orders.length }}" imgUrl="https://imgs-1253854453.image.myqcloud.com/dfe094a483737dbd218126ada84925b8.png" title="还没有订单~" button="逛一逛" bind:callback="handleToHome"></empty-list-component>
+</view>

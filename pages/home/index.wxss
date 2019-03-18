@@ -1,0 +1,91 @@
+/*红色渐变背景*/
+.page-bg {
+  position: absolute;
+  top: 0;
+  width: 750rpx;
+  height: 250rpx;
+  background-image: linear-gradient(to bottom, #f44135, #f88f76 32%, #fff);
+}
+
+/*banner*/
+.banner {
+  width: 690rpx;
+  margin: 0 auto;
+  padding-bottom: 26rpx;
+  position: relative;
+  border-radius: 20rpx;
+}
+.swiper,
+.swiper-item {
+  border-radius: 20rpx;
+}
+.swiper-item {
+  margin-right: 16rpx;
+}
+.banner-dots {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+.banner-dots .dot {
+  width: 30rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+  background: #ccc;
+  margin-right: 4rpx;
+}
+.banner-dots .dot.active {
+  background: #f44135;
+}
+.banner-dots .dot:last-child {
+  margin-right: 0;
+}
+.swiper {
+  width: 100%;
+  height: 280rpx;
+}
+.slide-image {
+  width: 690rpx;
+  height: 280rpx;
+  border-radius: 20rpx;
+}
+.recommend-list {
+  border-top: 16rpx solid #f5f5f5;
+}
+/*悬浮*/
+.suspend {
+  width: 182rpx;
+  height: 146rpx;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  background: url("https://imgs-1253854453.image.myqcloud.com/b3972885d5fcdef1bcc39a65348256a0.png") no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  right: 6rpx;
+  top: 300rpx;
+  padding-top: 60rpx;
+  display: flex;
+  justify-content: center;
+}
+.suspend-content {
+  width: 120rpx;
+  margin-left: -10rpx;
+}
+.suspend-amount {
+  padding: 6rpx 0 0;
+}
+
+.return-to-top {
+  width: 88rpx;
+  height: 88rpx;
+  position: fixed;
+  bottom: 30rpx;
+  right: 20rpx;
+}
+.return-to-top image {
+  width: 88rpx;
+  height: 88rpx;
+}

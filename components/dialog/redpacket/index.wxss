@@ -1,0 +1,53 @@
+@import "../../../static/css/common.wxss";
+@import "../../../static/css/font.wxss";
+/*提现中*/
+.redpacket-in-dialog {
+  width: 620rpx;
+  height: 720rpx;
+  background: url("https://imgs-1253854453.image.myqcloud.com/94ae8a72cdb07ce2b8d308416a0bbfec.png") no-repeat;
+  background-size: 100% 100%;
+  padding-top: 120rpx;
+  text-align: center;
+}
+.userAvter {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 2rpx solid #ececec;
+}
+.redpacket-in-dialog .redpacket-info {
+  padding: 40rpx 0 44rpx;
+}
+.redpacket-in-dialog .redpacket-info .text {
+  margin-top: 16rpx;
+}
+.redpacket-in-dialog .amount {
+  font-size: 80rpx;
+}
+
+.cash-button {
+  width: 480rpx;
+  height: 120rpx;
+  margin: 105rpx auto 0;
+}
+/*已提现*/
+.redpacket-out-dialog {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 60rpx 40rpx;
+  width: 540rpx;
+  text-align: center;
+}
+.redpacket-out-dialog .redpacket-info {
+  padding: 60rpx 0;
+}
+.redpacket-out-dialog .redpacket-info .amount {
+  font-size: 56rpx;
+}
+.redpacket-out-dialog .redpacket-info .middle {
+  padding: 12rpx 0 20rpx;
+}
+.large-btn-yellow {
+  background: #ff9f17;
+  margin-top: 30rpx;
+}

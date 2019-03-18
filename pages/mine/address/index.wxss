@@ -1,0 +1,76 @@
+page {
+  background: #f0f0f0;
+  border-top: 1rpx solid #ececec;
+  padding-bottom: 150rpx;
+}
+.address-item {
+  background: #fff;
+  margin-bottom: 16rpx;
+  padding: 0 28rpx;
+}
+.info {
+  border-bottom: 1rpx solid #ececec;
+  padding: 30rpx 0;
+}
+.address-integrated {
+  margin-top: 12rpx;
+}
+.action {
+  height: 92rpx;
+}
+.action .default {
+  color: #8e8b8b;
+  padding: 20rpx 0;
+}
+.action .default .icon {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  border: 2rpx solid #bdbdbd;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 16rpx;
+}
+.action .default .text {
+  height: 40rpx;
+  line-height: 40rpx;
+  position: relative;
+  top: 1px;
+}
+.action .default.active {
+  color: #f44135;
+}
+.action .default.active .icon {
+  width: 40rpx;
+  height: 40rpx;
+  background: url("https://static-cdn.xiangwushuo.com/publish/3kmk20pf1544254684844635473") no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+}
+.action .bottons {
+  width: 312rpx;
+}
+.bottons button:first-child {
+  margin-right: 24rpx;
+}
+.bottons button {
+  width: 144rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  border: 1rpx solid #8e8b8b;
+  color: #323030;
+  font-size: 28rpx;
+  border-radius: 6rpx;
+}
+.fixed-botton {
+  position: fixed;
+  bottom: 46rpx;
+  left: 28rpx;
+  width: 698rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  color: #fff;
+}

@@ -1,0 +1,18 @@
+page {
+  background: #f0f0f0;
+}
+.cash-list {
+  padding: 0 28rpx;
+  background: #fff;
+  border-top: 1rpx solid #ececec;
+}
+.cash-item {
+  height: 146rpx;
+  line-height: 1.4;
+}
+.cash-item .left {
+  width: 420rpx;
+}
+.cash-item .right {
+  text-align: right;
+}

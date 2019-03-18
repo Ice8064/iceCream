@@ -1,22 +1,66 @@
-<view class="wrapper">
-  <view class="user-info flex-center">
-    <image class="user-info__avator" src="{{ loginUserInfo.avatarUrl }}">
-    </image>
-    <view class="user-info__name">{{ loginUserInfo.nickName }}</view>
+<view class="page">
+  <!--用户信息-->
+  <view class="header">
+    <view class="user-info">
+      <image src="{{ userInfo.userAvatar }}" />{{ userInfo.userName }}
+    </view>
+    <view class="user-account">
+      <view class="user-asset flex-between" bindtap="handleToAsset">
+        <view class="">
+          <view class="">我的资产</view>
+          <view class="my-money font-family" wx:if="{{ !showAuth }}"><text class="font-14">￥</text>{{ asset.totalAmount }}</view>
+        </view>
+        <view class="see flex">
+          查看<view class="right-icon yellow"></view>
+        </view>
+      </view>
+      <!-- <navigator url="" hover-class="none" app-id="wxa344448166586158" target="miniProgram" path="/pages/index/index" url="">
+        <view class="user-flower flex-between font-normal">
+          <view>我的红花：{{ flowers }}朵</view>
+          <view class="flex">去使用<view class="right-icon white"></view></view>
+        </view>
+      </navigator> -->
+    </view>
   </view>
-
-  <view class="order">
-    <p>我的订单</p>
-    <p bindtap="openOrder">全部订单></p>
+  <!--我的订单-->
+  <view class="user-order">
+    <view class="order-title">
+      <view class="title font-16">我的订单</view>
+      <view class="more flex" bindtap="handleGoList">全部订单<view class="right-icon"></view></view>
+    </view>
+    <view class="order-status flex-between">
+      <view class="item" wx:for="{{ orderStatus }}" data-item="{{ item }}" bindtap="handleGoPage" wx:key="{{ index }}">
+        <image src="{{ item.icon }}" mode="widthFix" alt="icon" data-item="{{ item }}"  />
+        <view data-item="{{ item }}">{{ item.name }}</view>
+      </view>
+    </view>
   </view>
-
-  <view class="qrCode flex-center">
-    <p class="qrCode-title">店铺二维码</p>
-    <image
-      class="qrCode-img"
-      mode="widthFix"
-      src="https://user-images.githubusercontent.com/1715463/42300198-c79e41ac-8041-11e8-9bf4-569901bc8c5d.jpeg"
-    >
-    </image>
+  <!--tools-->
+  <view class="tools">
+    <view class="title font-16">
+      常用工具
+    </view>
+    <view class="tools-list">
+      <view class="tools-item flex-between" wx:for="{{ tools }}" wx:key="{{ index }}" bindtap="handleGoPage" data-item="{{ item }}">
+        <view class="name">
+          <image src="{{ item.icon }}" alt="icon" mode="widthFix" />
+          {{ item.name }}
+        </view>
+        <view class="right-icon"></view>
+      </view>
+      <!--意见反馈-->
+      <button open-type="feedback" class="feedback">
+        <view class="tools-item flex-between">
+          <view class="name">
+            <image src="https://imgs-1253854453.image.myqcloud.com/1ec91e76e27126cb7989d1b5fefd6223.png" alt="icon" mode="widthFix" />
+            意见反馈
+          </view>
+          <view class="right-icon"></view>
+        </view>
+      </button>
+    </view>
+  </view>
+  <view wx:if="{{ showAuth }}">
+    <auth-component bind:loginCall="loginCall"></auth-component>
   </view>
 </view>

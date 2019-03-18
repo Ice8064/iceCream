@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "提现中的红包",
+  "usingComponents": {
+    "empty-list-component": "../../../../components/empty/index",
+    "share-component": "../../../../components/dialog/share/index"
+  }
+}

@@ -1,0 +1,27 @@
+<form class="feed-list" report-submit bindsubmit="getSubmit">
+  <view class="recommed-wrap">
+    <view class="title" wx:if="{{ pageData.length && title }}">
+      <view class="text">{{ title }}</view>
+    </view>
+    <view class="recommed-list">
+      <view class="recommend-item" bindtap="handleToDetail" wx:for="{{ pageData }}" wx:key="{{ index }}" data-item="{{ item }}">
+        <button hover-class="none" form-type="submit">
+          <image src="{{ item.mainPicUrl }}" class="product-img"></image>
+        </button>
+        <view class="product-name"> {{ item.title }} </view>
+        <view class="product-info">
+          <view class="product-price"> 
+            <text class="dollar">¥</text>
+            <text class="price">{{ item.minSalePrice }}</text>
+            <text class="gain">赚{{ item.maxEarnAmount }}</text>
+          </view>
+          <view class="product-user-amount" wx:if="{{ item.buyerCount > 0 }}"> {{ item.buyerCount }}人买了 </view>
+        </view>
+      </view>
+      <!--<recommend-item-component data="{{ item }}" index="{{ index }}" wx:for="{{ pageData }}" wx:key="index"></recommend-item-component>-->
+    </view>
+    <view class="hermes-data-tip"  wx:if="{{ isLoading }}">
+      正在加载中...
+    </view>
+  </view>
+</form>

@@ -1,0 +1,51 @@
+<view class="page-inner white-bg">
+  <view class="top-container">
+    <image mode="widthFix"
+            src="http://imgs-1253854453.image.myqcloud.com/1531205277b73e1a7535605a3c2e36ff.jpg"></image>
+  </view>
+  <view class="bottom-container">
+    <view class="main-container">
+      <view class="prize-list">
+        <view class="prize-list__item"
+              wx:for="{{ list }}"
+              wx:key="{{index}}"
+              style="overflow:hidden;">
+          <view class="flex-item left"
+                style="padding-right:20rpx">
+            <image src="{{ item.img }}"
+                  style="height:60px;width:60px;display:block" />
+          </view>
+          <view class="flex-item left"
+                style="padding-right:10rpx;max-width:300rpx">
+            <view class="grey-text ellipsis"
+                  style="font-size:18px">
+              {{item.title}}
+            </view>
+            <view class="ellipsis"
+                  style="font-size:18px;margin-top:20rpx;color:#353535">
+              {{item.desc}}
+            </view>
+          </view>
+          <view class="flex-item right"
+                style=" padding-right:0">
+            <view style="font-size:15px">
+              <view class="btn grey-btn btn-round--lg"
+                    style="width: 180rpx; height: 80rpx; background: #c5ccc6; color: white; line-height: 75rpx; position: relative; padding-left: 0; padding-right:0"
+                    bindtap="onHandleClick">
+                领取
+              </view>
+              <view class="text-center"
+                    style="font-size:15px;height:15px;color:#9b9b9b;line-height:15px;position: relative;   margin-top:20rpx;">
+                还剩{{item.amount}}件
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="rule">
+    <image mode="widthFix"
+            src="http://imgs-1253854453.image.myqcloud.com/61f23ed39e423edc15ac3d0498e4a37d.png"></image>
+  </view>
+</view>

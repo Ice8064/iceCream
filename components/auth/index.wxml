@@ -1,0 +1,7 @@
+<view class="hermes-login-dialog" wx:if="{{ show }}">
+    <button
+      open-type="getUserInfo"
+      bindgetuserinfo="getUserInfo"
+      class="login-btn"
+    ></button>
+</view>

@@ -1,0 +1,70 @@
+page {
+  width: 100%;
+  background-color: #fff;
+  font-size: 24rpx;
+  color: #303231;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+view,
+text,
+image,
+label,
+input,
+textarea {
+  border: 0;
+  padding: 0;
+  font-family: PingFangSC;
+  word-wrap: break-word;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-sizing: content-box;
+  border: 0;
+  color: #fff;
+}
+button.button-hover {
+  background: transparent;
+}
+
+button::after {
+  border: 0;
+}
+
+image {
+  vertical-align: middle;
+}
+
+input {
+  font-size: 24rpx;
+  width: 100%;
+  z-index: unset;
+}
+
+textarea {
+  font-size: 28rpx;
+  width: 100%;
+  z-index: unset;
+}
+
+.switch-input {
+  width: 80rpx !important;
+  height: 44rpx !important;
+}
+
+/*白色样式（false的样式）*/
+.switch-input::before {
+  width: 76rpx !important;
+  height: 40prx !important;
+}
+
+/*绿色样式（true的样式）*/
+.switch-input::after {
+  width: 40rpx !important;
+  height: 40rpx !important;
+}

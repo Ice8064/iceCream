@@ -1,0 +1,16 @@
+.auth-wrap {
+  position: relative;
+}
+.login-btn {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  width: 100%;
+}
+.login-btn-low {
+  z-index: 9;
+}

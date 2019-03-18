@@ -1,0 +1,113 @@
+page {
+  background: #f0f0f0;
+  padding-bottom: 20px;
+}
+.item-list {
+  background: #fff;
+  margin-top: 30rpx;
+  padding: 0 28rpx;
+}
+.item-list .right-icon::after {
+  border-color: #8e8b8b;
+}
+.item-list .item {
+  height: 96rpx;
+  border-bottom: 1rpx solid #ececec;
+  color: #8e8b8b;
+}
+.item-list .item .right {
+  color: #323030;
+}
+.item-list .item .right.reasonDesc {
+  color: #8e8b8b;
+}
+.item-list .item:last-child {
+  border-bottom: 0;
+}
+.item-list .right-icon {
+  display: inline-block;
+  position: relative;
+  top: 2rpx;
+}
+.item-money {
+  display: flex;
+  align-items: center;
+}
+.item-money input {
+  width: 100px;
+}
+.refund-reason {
+  background: #fff;
+  margin: 16px 0;
+}
+.refund-reason textarea {
+  padding: 10px 30rpx;
+  height: 88px;
+}
+.upload {
+  background: #fff;
+  padding: 0 30rpx;
+}
+.upload .title {
+  height: 44px;
+  line-height: 44px;
+}
+.img-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.img-list .img {
+  width: 140rpx;
+  height: 140rpx;
+}
+.img-list .item {
+  margin-bottom: 30rpx;
+  position: relative;
+  margin-right: 30rpx;
+}
+.close-icon {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  right: -8px;
+  top: -8px;
+}
+.submit-btn {
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.dialog-content {
+  width: 690rpx;
+  padding: 0 30rpx 28rpx;
+  background: #fff;
+}
+.dialog-content .title {
+  padding: 30rpx 0;
+  text-align: center;
+}
+.dailog-scroll-view {
+  max-height: 400rpx;
+  margin-bottom: 10px;
+}
+.dailog-scroll-item {
+  height: 88rpx;
+  border-bottom: 1rpx solid #ececec;
+  color: #5e5959;
+}
+.dailog-scroll-item .icon {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  border: 2rpx solid #bdbdbd;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 16rpx;
+}
+.dailog-scroll-item.active .icon {
+  width: 40rpx;
+  height: 40rpx;
+  background: url("https://static-cdn.xiangwushuo.com/publish/3kmk20pf1544254684844635473") no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+}

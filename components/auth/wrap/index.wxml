@@ -1,0 +1,12 @@
+<form report-submit bindsubmit="getSubmit">
+  <view class="auth-wrap">
+      <button
+        open-type="getUserInfo"
+        bindgetuserinfo="getUserInfo"
+        class="login-btn"
+        wx:if="{{ show }}"
+      ></button>
+      <button class="login-btn login-btn-low" bindtap="handleOk" form-type="submit"></button>
+      <slot></slot>
+  </view>
+</form>

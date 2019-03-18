@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "提现",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#f0f0f0",
+  "backgroundColorTop": "#f0f0f0",
+  "usingComponents": {
+    "cash-list-component": "./modules/cashList/index"
+  }
+}

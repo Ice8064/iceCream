@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "已提现的红包",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "empty-list-component": "../../../../components/empty/index"
+  }
+}

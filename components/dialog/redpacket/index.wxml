@@ -1,0 +1,40 @@
+<form report-submit bindsubmit="getSubmit">
+  <view class="hermes_common-dialog" wx:if="{{ show }}" bindtap="handleCloseDialog">
+    <!--待领取状态-->
+    <view class="redpacket-in-dialog" catchtap="handleCatch" wx:if="{{ firstDialog }}">
+      <image src="{{ pageData.headUrl }}" alt="用户头像" class="userAvter" />
+      <view class="redpacket-info font-16" wx:if="{{ type == 1 }}">
+        <view class="">谢谢你帮我助力提现<text class="red">¥{{ pageData.boostAmount }}</text></view>
+        <view class="text">这是一点小心意，不要客气哦～</view>
+      </view>
+      <view class="redpacket-info font-16" wx:if="{{ type == 2 }}">
+        <view class="">亲爱的客官</view>
+        <view class="text">初次见面，送您一点小心意</view>
+      </view>
+      <view class="amount red">
+        <text class="font-20">￥</text>{{ pageData.boostRedPacketResponeVo.amount }}
+      </view>
+      <!--新用户红包-->
+      <auth-wrap-component bind:loginCall="handleShowNewRedpackInfo">
+        <button alt="提现红包" class="cash-button" form-type="submit" wx:if="{{ type == 2 }}"></button>
+      </auth-wrap-component>
+      <!--助力红包-->
+      <button alt="提现红包" class="cash-button" form-type="submit" bindtap="handleShowRedpackInfo" wx:if="{{ type == 1 }}"></button>
+    </view>
+    <!--已领取状态-->
+    <view class="redpacket-out-dialog" catchtap="handleCatch" wx:if="{{ !firstDialog }}">
+      <view class="font-20">恭喜您获得提现红包</view>
+      <view class="redpacket-info">
+        <view class="font-16">本次提现<text class="red font-18">￥</text><text class="red amount">{{ pageData.boostRedPacketResponeVo.reduceAmount }}</text></view>
+        <view class="font-16 middle">可在消费时抵用</view>
+        <view class="font-16">还有<text class="red">¥{{ pageData.boostRedPacketResponeVo.restAmount }}</text>待提现</view>
+      </view>
+      <button alt="提现红包" class="large-btn" form-type="submit" bindtap="handleToShare">
+        分享继续提现
+      </button>
+      <button alt="提现红包" class="large-btn large-btn-yellow" form-type="submit" bindtap="handleCloseDialog">
+        立即消费抵现
+      </button>
+    </view>
+  </view>
+</form>

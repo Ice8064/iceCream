@@ -1,0 +1,26 @@
+<view class="page">
+  <!--头部-->
+  <view class="header flex-center">
+    <view class="font-16">
+      <view>总现金（元）</view>
+      <view class="font-family">{{ asset.totalAmount }}</view>
+    </view>
+  </view>
+  <!--list-->
+  <view class="asset-list">
+    <view class="asset-item flex-between" bindtap="handleToCashIn">
+      <view class="info">
+        <view class="font-14">提现中</view>
+        <view class="font-16 font-bold red">￥<text class="font-22">{{ asset.withdrawTotalAmount }}</text></view>
+      </view>
+      <view class="right-icon"></view>
+    </view>
+    <view class="asset-item flex-between" bindtap="handleToCashOut">
+      <view class="info">
+        <view class="font-14">已提现</view>
+        <view class="font-16 font-bold red">￥<text class="font-22">{{ asset.curentBalance }}</text></view>
+      </view>
+      <view class="right-icon"></view>
+    </view>
+  </view>
+</view>

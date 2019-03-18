@@ -1,0 +1,11 @@
+<view wx:if="{{ show }}" class="no-data">
+  <view>
+    <image src="{{ imgUrl }}" />
+    <view>
+      {{ title }}
+    </view>
+    <button form-type="submit" bindtap="handleCallBack" hover-class="none">
+      {{ button }}
+    </button>
+  </view>
+</view>

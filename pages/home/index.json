@@ -1,0 +1,15 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "冰淇淋",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#f44135",
+  "backgroundColorTop": "#f44135",
+  "usingComponents": {
+    "feed-list-component": "../../components/feed-list/index",
+    "recommend-list-component": "../../components/recommend-list/index",
+    "auth-wrap-component": "../../components/auth/wrap/index",
+    "assistance-component": "../../components/dialog/assistance/index",
+    "redpack-component": "../../components/dialog/redpacket/index",
+    "danmuku-component": "../../components/dialog/danmuku/index"
+  }
+}

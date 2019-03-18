@@ -1,0 +1,45 @@
+.login-page .container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #fff url("https://imgs-1253854453.image.myqcloud.com/d211e74e3571abca10e1b9d26a6103a2.png") no-repeat left top;
+  background-size: cover;
+}
+.login-page .icon {
+  width: 92px;
+  height: 92px;
+  margin-left: 46px;
+  margin-top: 100px;
+  border-radius: 10px;
+}
+.login-page .title {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #303231;
+}
+.login-page .desc {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #303231;
+}
+.login-page .foot {
+  position: absolute;
+  left: 0;
+  margin-left: 30px;
+  bottom: 130px;
+}
+.login-page .btn {
+  width: 316px;
+  height: 44px;
+  border-radius: 4px;
+  background: #f44135;
+  text-align: center;
+  line-height: 44px;
+  font-size: 18px;
+  color: #fff;
+}

@@ -1,0 +1,27 @@
+<view class="page">
+<form report-submit
+        bindsubmit="getReportSubmit">
+  <view class="" wx:if="{{ address.length }}">
+    <view class="address-item" wx:for="{{ address }}" wx:key="{{ index }}" data-item="{{ item }}" bindtap="handleChoose">
+      <view class="info" data-item="{{ item }}">
+        <view>收货人：{{ item.name }} {{ item.tel }}</view>
+        <view class="address-integrated">收货地址：{{ item.addressIntegrated }}</view>
+      </view>
+      <view class="flex-between action">
+        <view class="default font-14 {{ item.default == 1 ? 'active' : '' }}" catchtap="handleSetDefault" data-item="{{ item }}">
+          <text class="icon"></text><text class="text">{{ item.default == 1 ? "当前地址" : "设为当前地址"}}</text>
+        </view>
+        <view class="bottons flex">
+          <button formType="submit" catchtap="handleEdit" data-item="{{ item }}">编辑</button>
+          <button formType="submit" catchtap="handleDel" data-index="{{ index }}">删除</button>
+        </view>
+      </view>
+    </view>
+    <view class="fixed-botton button-red font-16" bindtap="handleAddAddress">
+      新增地址
+    </view>
+  </view>
+  <!--空状态-->
+  <empty-list-component show="{{ ajaxSuccess && !address.length }}" imgUrl="https://imgs-1253854453.image.myqcloud.com/51860068562922e2611e85d4c77ce61a.png" title="还没有地址~" button="立即添加地址" bind:callback="handleAddAddress"></empty-list-component>
+</form>
+</view>

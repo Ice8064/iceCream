@@ -1,0 +1,35 @@
+<form class="feed-list" report-submit bindsubmit="getSubmit">
+  <view class="feed-item" bindtap="goToDetail" wx:for="{{ pagedata }}" wx:key="{{ index }}" data-item="{{ item }}">
+    <button hover-class="none" form-type="submit">
+      <image src="{{ item.mainPicUrl }}" class="product-img"></image>
+    </button>
+    <view class="product-msg">
+      <view class="product-name ellipsis-2"> {{ item.title }} </view>
+      <view class="product-info">
+        <view class="product-tags">
+          <view>
+            全场包邮
+          </view>
+          <view>
+            48小时发货
+          </view>
+        </view>
+        <view class="product-price"> 
+          <text class="dollar">¥</text>
+          <text class="text">{{ item.minSalePrice }}</text>
+          <text class="gain">赚{{ item.maxEarnAmount }}</text>
+        </view>
+        <view class="product-action">
+          <view class="product-buy-num">
+            <view class="product-user-photos {{ item.buyerCount > 1 ? 'position' : '' }}" wx:if="item.buyerCount > 0">
+              <image src="{{ item.buyerIcons[0] }}"></image>
+              <image src="{{ item.buyerIcons[1] }}" wx:if="{{ item.buyerCount > 1 }}" class="photos-position"></image>
+            </view>
+            <view class="product-user-amount" wx:if="{{ item.buyerCount > 0 }}"> {{ item.buyerCount }}人买了 </view>
+          </view>
+          <view class="button">去购买</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</form>

@@ -1,0 +1,49 @@
+<form report-submit bindsubmit="getSubmit">
+  <view class="hermes_common-dialog" wx:if="{{ show }}" bindtap="handleCloseDialog">
+    <view class="assistance-dialog" catchtap="handleCatch">
+      <image src="{{ pageData.headUrl }}" alt="分享人头像" class="userAvatar"/>
+      <!--助力模块-->
+      <view class="cash" wx:if="{{ type != 3 }}">
+        <view class="cash-amount font-16 red" wx:if="{{ type == 2 }}">谢谢你帮我助力提现¥{{ pageData.supportBoostAmount }}</view>
+        <view class="cash-doing font-16">正在提现 <text class="dollar">￥</text><text class="amount">{{ pageData.amount }}</text></view>
+      </view>
+      <view class="assistance-speed" wx:if="{{ type != 3 }}">
+        <view class="bg" style="width: {{ percent }}"></view>
+        <view class="position" style="left: {{ percent }};margin-left: {{ marginLeft }}">
+          <text class="font-10">￥</text><text class="font-16">{{ pageData.reduceAmount }}</text>
+        </view>
+      </view>
+      <!--次数没了的模块-->
+      <view class="font-16 number-time" wx:if="{{ type == 3 }}">
+        <view class="">今天你的助力次数没有了哦～</view>
+        <view class="tip">去淘宝贝，领取其他红包吧</view>
+      </view>
+      <!--button-->
+      <view wx:if="{{ type == 1 }}">
+        <auth-wrap-component bind:loginCall="handleHelpCash" >
+          <button form-type="submit" class="large-btn" hover-class="none">帮TA提现，领取红包</button>
+        </auth-wrap-component>
+      </view>
+      <button form-type="submit" class="large-btn" hover-class="none" catchtap="handleCloseDialog" wx:if="{{ type == 2 }}">去首页逛逛</button>
+      <button form-type="submit" class="large-btn" hover-class="none" catchtap="handleCloseDialog" wx:if="{{ type == 3 }}">去逛逛，继续领红包</button>
+      <!--助力list-->
+      <view class="friend-list" wx:if="{{ type == 2 }}">
+        <view class="title font-16">
+          好友助力团
+        </view>
+        <scroll-view scroll-y="true" class="friend-list-scroll-view">
+          <view class="flex-between friend-item" wx:for="{{ pageData.withdrawFlowsResponseVos }}" wx:key="{{ index }}">
+            <view class="friend-info">
+              <image src="{{ item.headUrl }}" alt="助力好友头像" />
+              <view class="font-14">{{ item.nickName }}</view>
+              <view class="gray">来自用户助力</view>
+            </view>
+            <view class="font-14 red">
+              <text class="{{ item.topBoostAmount ? '' : 'default-color' }}">{{ item.topBoostAmount ? "最高助力" : "助力" }}</text>￥{{ item.amount }}
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</form>

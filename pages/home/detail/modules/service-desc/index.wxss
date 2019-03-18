@@ -1,0 +1,52 @@
+.hermes_common-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+}
+.hermes_common-dialog.bottom {
+  align-items: flex-end;
+}
+
+.service-content {
+  width: 100%;
+  background: #fff;
+}
+.service-content .hd {
+  height: 108rpx;
+  line-height: 108rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #ececec;
+  font-size: 34rpx;
+}
+.service-list {
+  padding: 13px 15px 0;
+}
+.service-item {
+  padding-bottom: 15px;
+}
+.service-content .title {
+  font-size: 32rpx;
+  text-align: left;
+}
+.service-item image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 14rpx;
+  position: relative;
+  top: -1px;
+}
+.service-text {
+  padding-left: 46rpx;
+  color: #8e8b8b;
+  font-size: 28rpx;
+  margin-top: 12rpx;
+  line-height: 1.4;
+  font-weight: normal;
+}

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,9 +12,9 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.2",
+	"libVersion": "2.6.0",
 	"appid": "wx4673f3cf876ff250",
-	"projectname": "IceCream",
+	"projectname": "131312312",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -28,23 +28,13 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": -1,
-					"name": "我的页面",
-					"pathName": "pages/mine/index"
-				}
-			]
+			"current": -1,
+			"list": []
 		}
 	}
 }

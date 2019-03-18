@@ -1,0 +1,79 @@
+<view class="page">
+  <form report-submit bindsubmit="getReportSubmit">
+    <!--地址-->
+    <view class="hermes-list-cell access address {{ !address.id ? 'no-address' : ''}}" bindtap="handleToChangeAddress">
+      <view class="address-info" wx:if="{{ address.id }}">
+        <view class="font-16">{{ address.name }} {{ address.tel }}</view>
+        <view class="font-normal ellipsis address-desc">{{ address.addressIntegrated }}</view>
+      </view>
+      <view class="address-info font-16" wx:if="{{ !address.id }}">
+        <image src="https://imgs-1253854453.image.myqcloud.com/c17b67efda7e6dda881bc374787a392a.png" class="position-icon img-top"></image>请填写收件地址
+      </view>
+      <image src="https://imgs-1253854453.image.myqcloud.com/c98d43a3750982c24cab6de25fea3bce.png" alt="彩条背景" class="bg" />
+    </view>
+    <!--商品列表-->
+    <view class="buy-product-list">
+        <image src="{{ detail.img }}" alt="商品图片" class="buy-product-img" />
+      <view class="info">
+        <view class="ellipsis-2 name">
+          {{ detail.title }}
+        </view>
+        <view class="bottom flex-between">
+          <view class="price"><text class="font-16 red">￥</text><text class="font-20 red">{{ detail.salePrice }}</text></view>
+          <view class="hermes-minus-add">
+            <view class="minus" bindtap="handleMinus">-</view>
+            <view class="number">{{ detail.quantity }}</view>
+            <view class="add" bindtap="handleAdd">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--运费-->
+    <view class="freight">
+      <view class="flex-between line-bottom">
+        <view>运费</view>
+        <view class="font-normal">包邮</view>
+      </view>
+      <view class="flex-between">
+        <view>支付方式</view>
+        <view class="font-normal">
+          <image src="https://imgs-1253854453.image.myqcloud.com/f835a1ca7a7b0196167cd3058c3097ad.png" alt="微信支付icon" class="img-top" />微信支付
+        </view>
+      </view>
+    </view>
+    <!--优惠-->
+    <view class="favourable flex-center">
+      <!--<view class="switch">
+        <switch checked="{{ switchChecked }}" bindchange="handleSwitch"></switch>
+      </view>-->
+      <view>
+        <view class="favourable-amount">
+          本单抵现 <text class="red">-¥{{ orderBudgetMount }}</text>
+        </view>
+        <view class="font-normal amount-other">
+          剩余<text class="red">¥{{ balance }}</text>，可下次抵扣<text class="rule" bindtap="handleToRule">抵现规则</text>
+          <image src="https://imgs-1253854453.image.myqcloud.com/2db391d95c132d1ea730f417e98c1d84.png" class="img-top" alt="箭头"/>
+        </view>
+      </view>
+    </view>
+    <!--备注-->
+    <view class="hermes-list-cell access remarks" bindtap="handleToRemark">
+      <view class="font-16">
+        备注 <text class="ellipsis font-14">{{ remark }}</text>
+      </view>
+    </view>
+    <!--提交-->
+    <view class="checkout-action">
+      <view class="info">
+        <view class="info-price">实付款：<text class="red">￥</text><text class="red font-20">{{ amount }}</text></view>
+        <view class="gray font-normal">合计优惠{{ orderBudgetMount }}</view>
+      </view>
+      <view bindtap="handleSubmit" class="buy-button-wrap flex-center">
+        <button  form-type="submit" class="button" hover-class="none">
+          <view class="font-16">提交订单</view>
+          <view wx:if="{{ detail.earnAmount }}">赚￥{{ earnAmount }}</view>
+        </button>
+      </view>
+    </view>
+  </form>
+</view>

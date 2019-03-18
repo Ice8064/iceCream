@@ -1,0 +1,17 @@
+<view class="login-page">
+  <view class="container">
+    <view>
+      <image
+        :src="'https://images-1253854453.image.myqcloud.com/d81ead82af41ae9c81d225a4fec4842d.png'"
+        class="icon"
+      />
+      <view class="title">冰淇淋</view>
+      <view class="desc">国内知名淘好物平台</view>
+    </view>
+    <view class="foot">
+      <button class="btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        微信登录
+      </button>
+    </view>
+  </view>
+</view>

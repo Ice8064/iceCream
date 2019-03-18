@@ -1,0 +1,81 @@
+/*banner*/
+page {
+  background: #f0f0f0;
+  padding-bottom: 100rpx;
+}
+.banner,
+.swiper {
+  width: 750rpx;
+  height: 750rpx;
+  position: relative;
+}
+.slide-image {
+  width: 750rpx;
+  height: 750rpx;
+}
+.banner-dots {
+  position: absolute;
+  z-index: 1;
+  width: 80rpx;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20rpx;
+  right: 30rpx;
+  bottom: 24rpx;
+}
+/*商品信息*/
+.product {
+  background: #fff;
+}
+.product-info {
+  height: 94rpx;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price-info .gray {
+  text-decoration: line-through;
+  margin-left: 6rpx;
+}
+.buy-info .zhuan {
+  width: 100rpx;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+  background-color: #ffe6dd;
+  border-radius: 6rpx;
+  margin-right: 14rpx;
+}
+.buy-info .gray {
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.product .name {
+  font-size: 32rpx;
+  line-height: 1.4;
+  padding: 0 30rpx;
+  margin-bottom: 26rpx;
+}
+.desc image {
+  width: 100%;
+  height: 180rpx;
+  display: block;
+}
+.detail-introduce {
+  margin-top: 16rpx;
+  background: #fff;
+}
+.detail-introduce .hd {
+  padding: 30rpx 0 30rpx 30rpx;
+}
+.detail-introduce image {
+  width: 100%;
+}
+.buy-content {
+  background: #fff;
+}

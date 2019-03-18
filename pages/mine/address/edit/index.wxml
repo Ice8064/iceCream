@@ -1,0 +1,59 @@
+<form report-submit
+        bindsubmit="getReportSubmit">
+    <view class="container">
+      <view>
+        <view class="xws-list-cell">
+          <view class="xws-list-cell__hd">
+            <view>联系人：</view>
+            <input class="xws-list-cell__bd xws-field__input"
+                   placeholder="请填写姓名，不要填写特殊字符"
+                   placeholder-style="color:#ececec"
+                   name="userName"
+                   maxlength="20"
+                   value="{{ userName }}" bindinput="handleInput" data-type="userName" />
+          </view>
+        </view>
+        <view class="xws-list-cell">
+          <view class="xws-list-cell__hd">
+            <view>手机号：</view>
+            <input class="xws-list-cell__bd xws-field__input"
+                   name="telNumber"
+                   placeholder="仅支持中国大陆手机号"
+                   placeholder-style="color:#ececec"
+                   value="{{ telNumber }}" bindinput="handleInput" data-type="telNumber"/>
+          </view>
+        </view>
+        <picker mode="multiSelector"
+                bindcolumnchange="onHandleColumnchange"
+                range="{{ [provinceArray,cityArray,countyArray] }}"
+                range-key="areaName"
+                value="{{ [provinceInfo.index,cityInfo.index,countyInfo.index] }}"
+                style="border-bottom: 0.5px soviewd #eee;">
+          <view class="xws-list-cell">
+            <view class="xws-list-cell__hd">
+              <p style="width:80px">所在地区：</p>
+              <view class="xws-list-cell__bd">
+                {{provinceInfo.name+","+cityInfo.name+","+countyInfo.name}}
+              </view>
+            </view>
+          </view>
+        </picker>
+        <view class="xws-list-cell">
+          <view class="xws-list-cell__hd"
+               style="align-items:flex-start">
+            <p style="width:80px">详细地址：</p>
+            <textarea class="xws-list-cell__bd xws-field__input"
+                      name="address"
+                      placeholder="街道、小区门牌号码等详细信息"
+                      placeholder-style="color:#ececec"
+                      auto-height
+                      style="min-height:60px"
+                      value="{{ address }}"  bindinput="handleInput" data-type="address" />
+            </view>
+        </view>
+      </view>
+    </view>
+    <button class="fixed-botton button-red"
+            formType="submit" 
+            bindtap="handleSubmit" hover-class="none">提交</button>
+  </form>

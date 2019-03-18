@@ -1,0 +1,27 @@
+/*banner*/
+page {
+  background: #f0f0f0;
+}
+.remark {
+  margin-top: 16rpx;
+  padding-bottom: 34px;
+  background: #fff;
+  margin-bottom: 40px;
+  position: relative;
+}
+.remark textarea {
+  height: 147px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+.remark .num {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  color: #8e8b8b;
+  font-size: 14px;
+}
+.buttons {
+  padding: 0 26rpx;
+}

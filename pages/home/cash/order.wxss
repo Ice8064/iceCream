@@ -1,0 +1,105 @@
+page {
+  background: #f0f0f0;
+}
+.page {
+  padding: 38rpx 20rpx 20rpx;
+}
+.cash {
+  background: #fff;
+  position: relative;
+  border-radius: 8rpx;
+  padding: 50rpx 30rpx 30rpx;
+  margin-bottom: 20rpx;
+}
+.cash-tip {
+  font-size: 40rpx;
+  margin-bottom: 34rpx;
+  text-align: center;
+}
+.count-down {
+  padding: 0 0 26rpx;
+}
+.count-down text {
+  width: 17px;
+  height: 17px;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8rpx;
+  color: #fff;
+}
+.count-down label {
+  margin: 0 3px;
+}
+.cashing {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+.cashing text {
+  color: #f44135;
+}
+.cashing .amount {
+  font-size: 56rpx;
+}
+.cashing image {
+  width: 122rpx;
+  height: 44rpx;
+  position: relative;
+  top: -14rpx;
+  left: 8rpx;
+}
+.tip {
+  margin: 30rpx 0 10rpx;
+  text-align: center;
+}
+.share-tip {
+  color: #8e8b8b;
+  text-align: center;
+}
+.share-tip text {
+  margin-left: 30rpx;
+}
+.share-tip image {
+  width: 14rpx;
+  height: 22rpx;
+}
+.order-redpacket-dialog {
+  width: 620rpx;
+  height: 916rpx;
+  background: url("https://imgs-1253854453.image.myqcloud.com/3951956a5b7748f320939fa087a37eda.png") no-repeat;
+  background-size: 100% 100%;
+  padding-top: 164rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.userAvter {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 2rpx solid #ececec;
+}
+.order-redpacket-dialog .title {
+  padding: 20rpx 0 6rpx;
+}
+.order-redpacket-info {
+  margin-bottom: 14rpx;
+}
+.order-redpacket-info .amount {
+  font-size: 40rpx;
+  color: #f44135;
+}
+.order-redpacket-info .amount text {
+  font-size: 80rpx;
+}
+.user-acount {
+  margin-top: 86rpx;
+  color: #fff;
+  font-size: 28rpx;
+}
+.cash-button {
+  width: 480rpx;
+  height: 120rpx;
+  padding-top: 40rpx;
+  margin: 0rpx auto 0;
+}

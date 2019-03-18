@@ -1,0 +1,248 @@
+page {
+  background: #f0f0f0;
+}
+.page {
+  padding: 0 20rpx 156rpx;
+}
+.bg {
+  width: 750rpx;
+  height: 260rpx;
+  background: url("https://imgs-1253854453.image.myqcloud.com/176cc397e2da24d8042ded758383544f.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.item-wrap {
+  border-radius: 8rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24rpx;
+}
+.item-wrap .title {
+  height: 112rpx;
+  line-height: 112rpx;
+  border-bottom: 1rpx solid #ececec;
+  font-size: 32rpx;
+}
+.order-status {
+  height: 152rpx;
+  position: relative;
+  z-index: 1;
+  font-size: 36rpx;
+  color: #fff;
+}
+.order-status .status-icon {
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 8rpx;
+}
+.order-status .more-icon {
+  width: 14rpx;
+  height: 24rpx;
+  margin-left: 0rpx;
+}
+/*assistance*/
+.assistance .hd {
+  height: 108rpx;
+}
+.assistance .long.hd {
+  height: 200rpx;
+}
+.assistance .list {
+  border-top: 1rpx solid #ececec;
+}
+.assistance .item {
+  padding: 12rpx 0 38rpx;
+  margin-right: 38rpx;
+  text-align: center;
+}
+.assistance .item:last-child {
+  margin-right: 0;
+}
+.assistance .item image {
+  width: 92rpx;
+  height: 92rpx;
+  margin-bottom: 10rpx;
+  border-radius: 50%;
+}
+/*take-info*/
+.take-info {
+  font-size: 28rpx;
+}
+.take-info .info {
+  padding: 24rpx 0;
+}
+.take-info .info text {
+  margin-left: 24rpx;
+}
+.take-info .address {
+  margin-top: 12rpx;
+}
+/*物流*/
+.logistics-info {
+  font-size: 28rpx;
+}
+.logistics-info .info {
+  padding: 24rpx 0;
+}
+.logistics-no {
+  margin-top: 12rpx;
+}
+.logistics-flow {
+  padding-top: 24rpx;
+  border-top: 1rpx solid #ececec;
+}
+.logistics-flow-item {
+  padding: 0 0 40rpx 56rpx;
+  line-height: 1.4;
+  position: relative;
+  color: #8e8b8b;
+}
+.logistics-flow-item .time {
+  font-size: 24rpx;
+  color: #8e8b8b;
+  margin-top: 12rpx;
+}
+.logistics-flow-item:first-child {
+  color: #323030;
+}
+.logistics-flow-item::before {
+  position: absolute;
+  content: "";
+  width: 18rpx;
+  height: 18rpx;
+  background: #bdbdbd;
+  border-radius: 50%;
+  left: 13rpx;
+  top: 4rpx;
+}
+.logistics-flow-item:first-child::before {
+  background: #323030;
+}
+.success .logistics-flow-item:first-child::before {
+  background: url("https://static-cdn.xiangwushuo.com/publish/3kmk20pf1544254684844635473") no-repeat;
+  width: 40rpx;
+  height: 40rpx;
+  background-size: 100% 100%;
+  left: 0;
+}
+.success .logistics-flow-item:first-child::after {
+  height: calc(100% - 48rpx);
+  top: 48rpx;
+}
+.logistics-flow-item::after {
+  position: absolute;
+  content: "";
+  width: 2rpx;
+  height: calc(100% - 24rpx);
+  background: #bdbdbd;
+  overflow: hidden;
+  left: 20rpx;
+  top: 24rpx;
+}
+.logistics-flow-item:last-child::after {
+  height: 0;
+}
+/*订单商品*/
+.product-info.item-wrap {
+  padding: 0;
+}
+.product-info .title {
+  margin: 0 30rpx;
+}
+.product-item {
+  background: #fafafa;
+  padding: 20rpx 30rpx;
+}
+.product-img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 8rpx;
+}
+.product-item-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20rpx;
+}
+.product-info .info {
+  height: 140rpx;
+  width: 528rpx;
+  position: relative;
+  margin-left: 20rpx;
+}
+.product-info .info .name {
+  line-height: 1.4;
+}
+.product-info .info .num {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #8e8b8b;
+}
+.product-item-price {
+  color: #323030;
+  margin-right: 30rpx;
+}
+.amount-detail {
+  padding: 0 30rpx;
+}
+.price-detail {
+  padding: 24rpx 0 8rpx;
+}
+.price-detail .flex-between {
+  margin-bottom: 16rpx;
+}
+.product-num {
+  border-top: 1rpx solid #ececec;
+  border-bottom: 1rpx solid #ececec;
+  height: 84rpx;
+  line-height: 84rpx;
+}
+.product-num text {
+  margin-left: 4px;
+}
+.contact {
+  height: 88rpx;
+  color: #323030;
+}
+.contact-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+}
+/*order-info*/
+.order-info {
+  padding-bottom: 24rpx;
+}
+.copy.small-btn {
+  min-width: 0;
+}
+.order-no {
+  margin: 20rpx 0 12rpx;
+}
+.order-pay {
+  margin: 12rpx 0;
+}
+/*buttons*/
+.buttons {
+  background: #fff;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 112rpx;
+  padding-right: 30rpx;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  z-index: 10;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
+}
+.buttons button {
+  margin-left: 24rpx;
+}

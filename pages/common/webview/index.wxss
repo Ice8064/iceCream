@@ -1,0 +1,15 @@
+image {
+  width: 100%;
+}
+.home-buy {
+  width: 115px;
+  height: 40px;
+  box-shadow: 0 5px 5px 0 rgba(255, 99, 79, 0.31);
+  background-image: linear-gradient(to right, #ff8d6a, #ff3531);
+  position: fixed;
+  bottom: 90rpx;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  left: 50%;
+  margin-left: -67px;
+}

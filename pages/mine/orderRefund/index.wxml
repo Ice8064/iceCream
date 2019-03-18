@@ -1,0 +1,63 @@
+<view class="page">
+  <view class="item-list">
+    <view class="flex-between item">
+      <view>
+          <text class="red">*</text>服务类型
+      </view>
+      <view class="right" bindtap="handleShowDialog" data-type="refundType">
+        {{ refundTypeCheckItem.value }}<text class="right-icon" wx:if="{{ pageData.refundType.length > 1 }}"></text>
+      </view>
+    </view>
+    <view class="flex-between item">
+      <view>
+          <text class="red">*</text>货物状态
+      </view>
+      <view class="right" bindtap="handleShowDialog" data-type="receiveStatus">
+        {{ receiveStatusCheckItem.value }}<text class="right-icon" wx:if="{{ pageData.receiveStatus.length > 1 }}"></text>
+      </view>
+    </view>
+    <view class="flex-between item">
+      <view>
+          <text class="red">*</text>退款原因
+      </view>
+      <view class="right {{ !reasonCheckItem.reasonDesc ? 'reasonDesc' : '' }}" bindtap="handleShowDialog" data-type="reason">
+        {{ reasonCheckItem.reasonDesc || "请选择退款原因" }}<text class="right-icon"></text>
+      </view>
+    </view>
+    <view class="item item-money">
+        退货金额：<text class="red">￥</text><input class="red" type="text" value="{{ applyAmount }}" placeholder="请输入退款金额" bindinput="handleInput" maxlength="6"></input>
+    </view>
+  </view>
+  <!--退款说明-->
+  <view class="refund-reason">
+    <textarea placeholder="退款说明： 选填（500字 ） " bindinput="handleReason" value="{{ reasonDesc }}" maxlength="500" />
+  </view>
+  <view class="upload">
+    <view class="title">上传凭证（最多6张）</view>
+    <view class="img-list">
+      <view wx:for="{{ images }}" wx:key="{{ index }}" class="item">
+         <image src="{{ item }}" alt="上传的图片" class="img" />
+         <image src="https://imgs-1253854453.image.myqcloud.com/a82538bca7f4c3316beba80fbbd24c57.png" alt="删除" class="close-icon" bindtap="handleDel" data-index="{{ index }}" />
+      </view>
+       <view class="item">
+        <image src="https://imgs-1253854453.image.myqcloud.com/8d8d6a3997d028045d197ea75561a2ac.png" alt="上传icon" class="img" bindtap="handleUploadImg" />
+      </view>
+    </view>
+  </view>
+  <button class="btn large-btn submit-btn" hover-class="none" bindtap="handleSubmit">提交</button>
+
+  <view class="hermes_common-dialog bottom" bindtap="handleClose" wx:if="{{ showDialog }}">
+    <view class="hermes_common-dialog-content">
+      <view class="dialog-content" catchtap="handleContent">
+        <view class="title">{{ title }}</view>
+        <scroll-view scroll-y="true" class="dailog-scroll-view">
+          <view class="dailog-scroll-item flex-between {{ (checkItem.reasonId == item.reasonId && item.reasonId) ? 'active' : '' }} {{ (checkItem.key == item.key && item.key) ? 'active' : '' }}" wx:for="{{ reasons }}" wx:key="{{ index }}" catchtap="handleCheckItem" data-item="{{ item }}">
+            <view>{{ item.reasonDesc || item.value }}</view>
+            <view class="icon"></view>
+          </view>
+        </scroll-view>
+        <button class="btn large-btn" bindtap="handleClose" hover-class="none">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

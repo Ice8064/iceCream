@@ -1,0 +1,145 @@
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.ellipsis-2 {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.line-bottom {
+  border-bottom: 1rpx solid #ececec;
+}
+
+image.img-top {
+  position: relative;
+  top: -1px;
+}
+/*颜色*/
+.red {
+  color: #f44135;
+}
+.gray {
+  color: #8e8b8b;
+}
+.button {
+  text-align: center;
+}
+.button-red {
+  background: #f44135;
+}
+.small-btn {
+  min-width: 112rpx;
+  padding: 0 16rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  border: 1rpx solid #8e8b8b;
+  font-size: 28rpx;
+  color: #323030;
+  border-radius: 6rpx;
+  text-align: center;
+}
+.small-btn-yellow {
+  color: #ff8a2e;
+  border-color: #ff8a2e;
+  background: #fffbf7;
+}
+.small-btn-red {
+  color: #f44135;
+  border-color: #f44135;
+}
+.large-btn {
+  width: 100%;
+  background: #f44135;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 12rpx;
+}
+/*flex*/
+.flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/*dialog*/
+.hermes_common-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+}
+.hermes_common-dialog.bottom {
+  align-items: flex-end;
+}
+/*赚UI*/
+.hermes-gain {
+  min-width: 84rpx;
+  padding: 0 8rpx;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 6rpx;
+  background: #ffe6dd;
+  color: #f44135;
+  float: left;
+}
+/* 加减UI */
+.hermes-minus-add {
+  border-radius: 6rpx;
+  height: 60rpx;
+  line-height: 56rpx;
+  width: 212rpx;
+  text-align: center;
+  display: flex;
+}
+.hermes-minus-add .minus,
+.hermes-minus-add .add {
+  width: 68rpx;
+  border: 1px solid #c2b9b9;
+  background: rgb(244, 244, 244);
+}
+.hermes-minus-add .minus {
+  border-radius: 6rpx 0 0 6rpx;
+}
+.hermes-minus-add .add {
+  border-radius: 0 6rpx 6rpx 0;
+}
+.hermes-minus-add .number {
+  width: 80rpx;
+  font-size: 32rpx;
+  border: 1px solid #c2b9b9;
+  border-left: 0;
+  border-right: 0;
+}

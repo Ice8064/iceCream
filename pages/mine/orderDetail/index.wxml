@@ -1,0 +1,139 @@
+<form report-submit bindsubmit="getSubmit">
+<view class="page">
+  <!--背景-->
+  <view class="bg"></view>
+  <!--订单状态-->
+  <view class="order-status flex-between">
+    <view>
+          <image src="{{ orderStatus[detail.tradeInfo.orderInfoVoList[0].status].icon }}" alt="订单状态icon" class="status-icon img-top" />{{ orderStatus[detail.tradeInfo.orderInfoVoList[0].status].name }}
+    </view>
+    <!--代支付-->
+    <view wx:if="{{ detail.tradeInfo.orderInfoVoList[0].status == 1 }}" class="font-14">
+      {{ overTime }}自动关闭
+    </view>
+    <!--交易完成-->
+    <view class="font-14" bindtap="handleToHome" wx:if="{{ detail.tradeInfo.orderInfoVoList[0].status == 5 }}">
+      查看其他宝贝
+      <image src="https://imgs-1253854453.image.myqcloud.com/39513b3b3390a1cba50e51eff7f36271.png" mode="widthFix" class="more-icon img-top" alt="右箭头"/>
+    </view>
+  </view>
+  <!--助力-->
+  <view class="item-wrap assistance" wx:if="{{ showBoostDetail }}">
+    <view class="flex-between hd {{ !detail.boostWithdrawVo.flowList.length ? 'long' : '' }}">
+      <view class="font-14">
+        {{ boostStatus[detail.boostWithdrawVo.status] }}<text class="red" wx:if="{{ detail.boostWithdrawVo.status == 2 }}">¥{{ detail.boostWithdrawVo.amount }}</text>，已提 <text class="red">¥{{ detail.boostWithdrawVo.reduceAmount }}</text>
+      </view>
+      <view class="small-btn small-btn-red" bindtap="handleToAssistance">
+        助力详情
+      </view>
+    </view>
+    <view class="flex list" wx:if="{{ detail.boostWithdrawVo.flowList.length }}">
+      <view class="item" wx:for="{{ detail.boostWithdrawVo.flowList }}" wx:key="{{ index }}" wx:if="{{ index < 5 }}">
+        <image src="{{ item.headUrl }}" />
+        <view class="red">
+           助力¥{{ item.boostAmount }}
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--收货信息-->
+  <view class="take-info item-wrap">
+    <view class="title">
+      收货信息
+    </view>
+    <view class="info">
+      <view class="">{{ detail.tradeAddress.receiver }}<text>{{ detail.tradeAddress.mobile }}</text></view>
+      <view class="address">{{ detail.tradeAddress.provinceName }} {{ detail.tradeAddress.cityName }} {{ detail.tradeAddress.districtName }} {{ detail.tradeAddress.address }} </view>
+    </view>
+  </view>
+  <!--物流信息-->
+  <view class="logistics-info item-wrap" wx:if="{{ detail.tradeInfo.orderInfoVoList[0].logisticsSn }}">
+    <view class="title">
+      物流信息
+    </view>
+    <view class="info">
+      <view class="">物流公司：{{ detail.tradeInfo.orderInfoVoList[0].logisticsCompanyName }}</view>
+      <view class="logistics-no">物流编号：{{ detail.tradeInfo.orderInfoVoList[0].logisticsSn }}</view>
+    </view>
+    <view class="logistics-flow {{ processDetail.isCheck ? 'success' : '' }}">
+      <view class="logistics-flow-item" wx:for="{{processDetail. processDataList }}" wx:key="{{ index }}">
+        {{ item.context }}
+        <view class="time">{{ item.ftime }}</view>
+      </view>
+    </view>
+  </view>
+  <!--商品信息-->
+  <view class="product-info item-wrap">
+    <view class="title">
+      商品信息
+    </view>
+    <view class="product-item" wx:for="{{ detail.tradeInfo.orderInfoVoList[0].orderItemList }}" wx:key="{{ index }}">
+      <view class="flex" bindtap="handleToProductDetail">
+        <image src="{{ item.itemImg }}" alt="商品图片" class="product-img" />
+        <view class="info">
+          <view class="name ellipsis-2 font-14">{{ item.itemName }}</view>
+          <view class="num"><text class="product-item-price">￥{{ item.price }}</text>商品数量X{{item.quantity }}</view>
+        </view>
+      </view>
+      <view class="product-item-action" wx:if="{{ detail.tradeInfo.orderInfoVoList[0].status == 2 || detail.tradeInfo.orderInfoVoList[0].status == 3 || detail.tradeInfo.orderInfoVoList[0].status == 4 }}">
+        <!--0 4 5退货-->
+        <button class="small-btn" bindtap="handleRefund" wx:if="{{ item.refundStatus == 'NO_REFUND' }}" data-item="{{ item }}">
+          退款
+        </button>
+        <!--0 4 5退货-->
+        <button class="small-btn" bindtap="handleRefund" wx:if="{{ item.refundStatus == 'REFUSE' || item.refundStatus ==  'CLOSED' }}" data-item="{{ item }}">
+          拒绝退款,重新申请
+        </button>
+        <!--1 6取消退货-->
+        <button class="small-btn" bindtap="handleCancelRefund" data-item="{{ item }}" wx:if="{{ item.refundStatus == 'WAIT_REFUND_AUDIT' || item.refundStatus == 'WAIT_BUYER_RETURN_GOODS' }}">
+          取消退款
+        </button>
+      </view>
+      <view class="product-item-action red" wx:if="{{ detail.tradeInfo.orderInfoVoList[0].status == 9 && item.refundStatus == 'SUCCESS' }}">
+        已退款
+      </view>
+    </view>
+    <view class="amount-detail">
+      <view class="price-detail font-13">
+        <view class="flex-between">
+          <view>商品金额</view>
+          <view>￥{{ detail.tradeInfo.totalFee }}</view>
+        </view>
+        <view class="flex-between">
+          <view>现金账户抵扣</view>
+          <view>￥-{{ detail.tradeInfo.couponFee }}</view>
+        </view>
+        <view class="flex-between">
+          <view>运费</view>
+          <view>￥{{ detail.tradeInfo.freightFee }}</view>
+        </view>
+      </view>
+      <view class="product-num flex-end font-14">
+        {{ detail.tradeInfo.orderInfoVoList[0].orderItemList[0].quantity }}件商品，共<text class="font-16 red"> ¥{{ detail.tradeInfo.payableFee }}</text>
+      </view>
+      <button class="contact flex-center font-13" open-type="contact" session-from="userId={{ userInfo.userId }}">
+        <image src="https://imgs-1253854453.image.myqcloud.com/a746f3da09133fd7de8fa1f13da5fc11.png" class="contact-icon" />联系客服
+      </button>
+    </view>
+  </view>
+  <!--订单信息-->
+  <view class="order-info item-wrap">
+    <view class="title flex-between">
+      订单信息<view class="copy small-btn" bindtap="handleSetClip">复制</view>
+    </view>
+    <view class="font-14">
+      <view class="order-no">订单号：{{ detail.tradeInfo.tradeId }}</view>
+      <view class="order-ctime">下单时间：{{ detail.tradeInfo.createdAt }}</view>
+      <view class="order-pay">支付方式：微信支付</view>
+      <view class="order-type">订单类型：线上订单</view>
+    </view>
+  </view>
+  <!--buttons-->
+  <view class="buttons">
+    <button class="small-btn" form-type="submit" bindtap="handleCancel" wx:if="{{ detail.tradeInfo.orderInfoVoList[0].status == 1 }}">取消订单</button>
+    <button class="small-btn small-btn-red" wx:if="{{ detail.tradeInfo.orderInfoVoList[0].status == 1 }}" bindtap="handleToPay">确认支付</button>
+    <button class="small-btn small-btn-red" wx:if="{{ detail.tradeInfo.orderInfoVoList[0].status == 3 }}" bindtap="handleOrderConfirm">确定收货</button>
+    <button class="small-btn" open-type="feedback">投诉</button>
+  </view>
+</view>
+</form>

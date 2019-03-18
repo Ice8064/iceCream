@@ -1,0 +1,29 @@
+.no-data {
+  text-align: center;
+  color: #8e8b8b;
+  font-size: 32rpx;
+  height: 100vh;
+  width: 100vw;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.no-data image {
+  width: 412rpx;
+  height: 224rpx;
+}
+.no-data button {
+  width: 246rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  background-image: linear-gradient(to right, #ff8d6a, #ff3531);
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  margin: 50rpx auto 0;
+}

@@ -1,0 +1,49 @@
+ <form report-submit bindsubmit="getReportSubmit">
+  <view class="buy-action">
+    <view class="share flex-around">
+      <button form-type="submit" class="font-11" bindtap="goToHome">
+        <image src="https://imgs-1253854453.image.myqcloud.com/29d1bb94221337f5ee37bd813fe65b59.png" alt="首页icon"></image>首页
+      </button>
+      <button open-type="share" form-type="submit" class="font-11" wx:if="{{ !isAdmin }}">
+        <image src="https://imgs-1253854453.image.myqcloud.com/2d117effc309d412fcc75b724b19e6eb.png" alt="分享icon"></image>分享
+      </button>
+      <button bindtap="handleShowShare" form-type="submit" class="font-11" wx:if="{{ isAdmin }}">
+        <image src="https://imgs-1253854453.image.myqcloud.com/2d117effc309d412fcc75b724b19e6eb.png" alt="分享icon"></image>分享
+      </button>
+    </view>
+    <view class="buy-button-wrap flex-center">
+      <auth-wrap-component bind:loginCall="handleShowDialog">
+        <button  form-type="submit" class="button">
+          <view class="font-22 font-normal"><text class="font-16">￥</text>{{ pageData.itemSkuList[0].salePrice }}</view>
+          <view wx:if="{{ pageData.itemSkuList[0].earnAmount }}">赚￥{{ pageData.itemSkuList[0].earnAmount }}</view>
+        </button>
+      </auth-wrap-component>
+    </view>
+  </view>
+  <!--修改数量弹窗-->
+  <view class="hermes_common-dialog bottom" bindtap="handleClose" wx:if="{{ showDialog }}">
+    <view class="hermes_common-dialog-content">
+      <view class="buy-content" catchtap="handleContent">
+        <view class="buy-product-list">
+          <view class="close font-16" bindtap="handleClose"><image src="https://imgs-1253854453.image.myqcloud.com/499fa4a51d410005c4d4b4f057d9fd46.png" /></view>
+            <image src="{{ pageData.carouselImgList[0].url }}" alt="商品图片" class="buy-product-img" />
+          <view class="info">
+            <view class="price"><text class="font-16 red">￥</text><text class="font-20 red">{{ pageData.itemSkuList[0].salePrice }}</text></view>
+            <view class="hermes-gain" wx:if="{{ pageData.itemSkuList[0].earnAmount }}">赚￥{{ pageData.itemSkuList[0].earnAmount }}</view>
+            <view class="bottom flex-between">
+              <view class="font-14">请选择购买数量</view>
+              <view class="hermes-minus-add">
+                <view class="minus" bindtap="handleMinus">-</view>
+                <view class="number">{{ quantity }}</view>
+                <view class="add" bindtap="handleAdd">+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <button form-type="submit" class="button button-red font-16" bindtap="handleSubmit">确定</button>
+      </view>
+    </view>
+  </view>
+  <!--share-component-->
+  <share-component show="{{ showShare }}" bind:shareHide="handleShareHide" bind:sharePoster="handleSharePoster"></share-component>
+</form>

@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "冰淇淋",
+  "usingComponents": {
+    "recommend-list-component": "../../../components/recommend-list/index",
+    "buy-dialog-component": "./modules/buy-dialog/index",
+    "service-desc-component": "./modules/service-desc/index",
+    "danmuku-component": "../../../components/dialog/danmuku/index",
+    "redpack-component": "../../../components/dialog/redpacket/index"
+  }
+}
